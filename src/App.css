@@ -1,0 +1,987 @@
+/* Variables CSS étendues pour un design système professionnel */
+:root {
+  /* Light Theme - Palette professionnelle corporate */
+  --bg-primary: #ffffff;
+  --bg-secondary: #f8f9fa;
+  --bg-tertiary: #e9ecef;
+  --bg-card: #ffffff;
+  --text-primary: #212529;
+  --text-secondary: #495057;
+  --text-muted: #6c757d;
+  --border-color: #dee2e6;
+  --border-light: #f1f3f4;
+  
+  /* Couleurs principales - Palette professionnelle */
+  --primary: #2c5aa0;
+  --primary-hover: #1e4a8a;
+  --primary-light: #e8eff7;
+  --secondary: #6c757d;
+  --success: #198754;
+  --success-hover: #146c43;
+  --warning: #ffc107;
+  --warning-hover: #e0a800;
+  --danger: #dc3545;
+  --danger-hover: #bb2d3b;
+  --info: #0dcaf0;
+  
+  /* Couleurs d'accent corporate */
+  --accent-blue: #2c5aa0;
+  --accent-navy: #1e3a5f;
+  --accent-slate: #4a5568;
+  --accent-teal: #20c997;
+  
+  /* Effets et ombres */
+  --shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.08);
+  --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-md: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  --shadow-xl: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
+  
+  /* Dégradés professionnels */
+  --gradient-primary: linear-gradient(135deg, #2c5aa0 0%, #1e4a8a 100%);
+  --gradient-success: linear-gradient(135deg, #198754 0%, #146c43 100%);
+  --gradient-warning: linear-gradient(135deg, #ffc107 0%, #e0a800 100%);
+  --gradient-danger: linear-gradient(135deg, #dc3545 0%, #bb2d3b 100%);
+  --gradient-corporate: linear-gradient(135deg, #2c5aa0 0%, #1e3a5f 100%);
+  
+  /* Tailles et espacements */
+  --border-radius: 8px;
+  --border-radius-sm: 6px;
+  --border-radius-lg: 12px;
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 1rem;
+  --spacing-md: 1.5rem;
+  --spacing-lg: 2rem;
+  --spacing-xl: 3rem;
+  --spacing-2xl: 4rem;
+  
+  /* Typographie */
+  --font-size-xs: 0.75rem;
+  --font-size-sm: 0.875rem;
+  --font-size-base: 1rem;
+  --font-size-lg: 1.125rem;
+  --font-size-xl: 1.25rem;
+  --font-size-2xl: 1.5rem;
+  --font-size-3xl: 1.875rem;
+  
+  /* Transitions */
+  --transition-fast: 0.15s ease;
+  --transition-normal: 0.3s ease;
+  --transition-slow: 0.5s ease;
+}
+
+/* Dark Theme professionnel */
+[data-theme="dark"] {
+  --bg-primary: #121212;
+  --bg-secondary: #1e1e1e;
+  --bg-tertiary: #2d2d2d;
+  --bg-card: #1e1e1e;
+  --text-primary: #f8f9fa;
+  --text-secondary: #e9ecef;
+  --text-muted: #adb5bd;
+  --border-color: #404040;
+  --border-light: #2d2d2d;
+  
+  --shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.4);
+  --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.5), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 10px 15px -3px rgba(0, 0, 0, 0.5), 0 4px 6px -2px rgba(0, 0, 0, 0.3);
+  --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.5), 0 10px 10px -5px rgba(0, 0, 0, 0.3);
+}
+
+/* Reset moderne */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  line-height: 1.6;
+  font-weight: 400;
+  transition: all var(--transition-normal);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Layout principal amélioré */
+.App {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: var(--spacing-md);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header professionnel */
+.App-header {
+  background: var(--gradient-corporate);
+  color: white;
+  padding: var(--spacing-xl);
+  border-radius: var(--border-radius-lg);
+  margin-bottom: var(--spacing-xl);
+  text-align: center;
+  position: relative;
+  box-shadow: var(--shadow-lg);
+  overflow: hidden;
+}
+
+.App-header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, rgba(255,255,255,0.1) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.App-header h1 {
+  font-size: var(--font-size-3xl);
+  margin-bottom: var(--spacing-xs);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-sm);
+  font-weight: 600;
+  position: relative;
+  z-index: 1;
+}
+
+.theme-toggle {
+  position: absolute;
+  top: var(--spacing-lg);
+  right: var(--spacing-lg);
+  background: rgba(255, 255, 255, 0.15);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--transition-normal);
+  backdrop-filter: blur(10px);
+  z-index: 2;
+}
+
+.theme-toggle:hover {
+  background: rgba(255, 255, 255, 0.25);
+  border-color: rgba(255, 255, 255, 0.5);
+  transform: scale(1.05);
+}
+
+/* Actions principales améliorées */
+.header-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--spacing-xl);
+  gap: var(--spacing-md);
+  flex-wrap: wrap;
+}
+
+.btn-primary {
+  background: var(--gradient-corporate);
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  font-size: var(--font-size-base);
+  font-weight: 500;
+  transition: all var(--transition-normal);
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  box-shadow: var(--shadow);
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-primary::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+  transition: left var(--transition-slow);
+}
+
+.btn-primary:hover::before {
+  left: 100%;
+}
+
+.btn-primary:hover {
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
+}
+
+/* Filtres professionnels */
+.filters {
+  background: var(--bg-card);
+  padding: var(--spacing-lg);
+  border-radius: var(--border-radius-lg);
+  margin-bottom: var(--spacing-xl);
+  border: 1px solid var(--border-light);
+  box-shadow: var(--shadow);
+  position: relative;
+}
+
+.filters::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--gradient-corporate);
+  border-radius: var(--border-radius-lg) var(--border-radius-lg) 0 0;
+}
+
+.filters h2 {
+  margin-bottom: var(--spacing-lg);
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  font-size: var(--font-size-lg);
+  font-weight: 600;
+}
+
+.filters form {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: var(--spacing-md);
+  align-items: end;
+}
+
+.filters input {
+  padding: 12px 16px;
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius-sm);
+  font-size: var(--font-size-base);
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  transition: all var(--transition-fast);
+  font-weight: 400;
+}
+
+.filters input:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 2px rgba(44, 90, 160, 0.1);
+}
+
+.filters input::placeholder {
+  color: var(--text-muted);
+  font-weight: 400;
+}
+
+.filters button {
+  padding: 12px 20px;
+  border: none;
+  border-radius: var(--border-radius-sm);
+  cursor: pointer;
+  font-size: var(--font-size-sm);
+  font-weight: 500;
+  transition: all var(--transition-normal);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-xs);
+}
+
+.filters button[type="submit"] {
+  background: var(--gradient-success);
+  color: white;
+  box-shadow: var(--shadow-sm);
+}
+
+.filters button[type="submit"]:hover {
+  transform: translateY(-1px);
+  box-shadow: var(--shadow);
+}
+
+.filters button[type="button"] {
+  background: var(--bg-tertiary);
+  color: var(--text-secondary);
+  border: 1px solid var(--border-color);
+}
+
+.filters button[type="button"]:hover {
+  background: var(--bg-secondary);
+  transform: translateY(-1px);
+}
+
+/* Grille des cours professionnelle */
+.courses-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+  gap: var(--spacing-lg);
+  margin-bottom: var(--spacing-2xl);
+}
+
+/* Cartes de cours professionnelles */
+.course-item {
+  background: var(--bg-card);
+  border: 1px solid var(--border-light);
+  border-radius: var(--border-radius-lg);
+  padding: var(--spacing-lg);
+  box-shadow: var(--shadow);
+  transition: all var(--transition-normal);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.course-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--gradient-corporate);
+  transition: height var(--transition-normal);
+}
+
+.course-item:hover::before {
+  height: 5px;
+}
+
+.course-item:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--primary-light);
+}
+
+.course-item h3 {
+  color: var(--text-primary);
+  margin-bottom: var(--spacing-md);
+  font-size: var(--font-size-lg);
+  font-weight: 600;
+  line-height: 1.4;
+  display: flex;
+  align-items: flex-start;
+  gap: var(--spacing-sm);
+}
+
+.course-item p {
+  margin-bottom: var(--spacing-sm);
+  color: var(--text-secondary);
+  display: flex;
+  align-items: flex-start;
+  gap: var(--spacing-xs);
+  line-height: 1.5;
+  font-size: var(--font-size-sm);
+}
+
+.course-item strong {
+  color: var(--text-primary);
+  min-width: 100px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+}
+
+/* Emploi du temps professionnel */
+.schedules {
+  margin: var(--spacing-lg) 0;
+  padding: var(--spacing-lg);
+  background: var(--bg-secondary);
+  border-radius: var(--border-radius);
+  border-left: 4px solid var(--primary);
+  position: relative;
+}
+
+.schedules::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, transparent 0%, rgba(44, 90, 160, 0.02) 100%);
+  pointer-events: none;
+  border-radius: var(--border-radius);
+}
+
+.schedules h4 {
+  margin-bottom: var(--spacing-md);
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  font-weight: 500;
+  position: relative;
+}
+
+.schedule-item {
+  padding: var(--spacing-sm) 0;
+  border-bottom: 1px solid var(--border-light);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--spacing-md);
+  position: relative;
+  transition: all var(--transition-fast);
+}
+
+.schedule-item:hover {
+  background: rgba(44, 90, 160, 0.03);
+  margin: 0 calc(-1 * var(--spacing-sm));
+  padding: var(--spacing-sm);
+  border-radius: var(--border-radius-sm);
+}
+
+.schedule-item:last-child {
+  border-bottom: none;
+}
+
+/* Actions des cours professionnelles */
+.course-actions {
+  margin-top: auto;
+  display: flex;
+  gap: var(--spacing-sm);
+  justify-content: flex-end;
+  padding-top: var(--spacing-lg);
+  border-top: 1px solid var(--border-light);
+}
+
+.btn-edit, .btn-delete {
+  padding: 8px 16px;
+  border: none;
+  border-radius: var(--border-radius-sm);
+  cursor: pointer;
+  font-size: var(--font-size-sm);
+  font-weight: 500;
+  transition: all var(--transition-normal);
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  box-shadow: var(--shadow-sm);
+}
+
+.btn-edit {
+  background: var(--gradient-warning);
+  color: #212529;
+}
+
+.btn-edit:hover {
+  transform: translateY(-1px);
+  box-shadow: var(--shadow);
+}
+
+.btn-delete {
+  background: var(--gradient-danger);
+  color: white;
+}
+
+.btn-delete:hover {
+  transform: translateY(-1px);
+  box-shadow: var(--shadow);
+}
+
+/* Formulaire professionnel */
+.course-form {
+  background: var(--bg-card);
+  padding: var(--spacing-xl);
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--shadow-lg);
+  border: 1px solid var(--border-light);
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.course-form::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--gradient-corporate);
+  border-radius: var(--border-radius-lg) var(--border-radius-lg) 0 0;
+}
+
+.course-form h2 {
+  margin-bottom: var(--spacing-xl);
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  font-size: var(--font-size-xl);
+  font-weight: 600;
+  text-align: center;
+  justify-content: center;
+}
+
+.form-group {
+  margin-bottom: var(--spacing-lg);
+  position: relative;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: var(--spacing-sm);
+  font-weight: 500;
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  font-size: var(--font-size-base);
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius-sm);
+  font-size: var(--font-size-base);
+  font-family: inherit;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  transition: all var(--transition-fast);
+  font-weight: 400;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 2px rgba(44, 90, 160, 0.1);
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 100px;
+  line-height: 1.5;
+}
+
+/* Section emploi du temps professionnelle */
+.schedules-section {
+  margin: var(--spacing-xl) 0;
+  padding: var(--spacing-xl);
+  background: var(--bg-secondary);
+  border-radius: var(--border-radius-lg);
+  border: 1px solid var(--border-light);
+  position: relative;
+}
+
+.schedules-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--gradient-corporate);
+  border-radius: var(--border-radius-lg) var(--border-radius-lg) 0 0;
+}
+
+.schedules-section h3 {
+  margin-bottom: var(--spacing-lg);
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  font-size: var(--font-size-lg);
+  font-weight: 600;
+}
+
+.schedule-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr auto;
+  gap: var(--spacing-md);
+  align-items: end;
+  margin-bottom: var(--spacing-md);
+  padding: var(--spacing-lg);
+  background: var(--bg-primary);
+  border-radius: var(--border-radius);
+  border: 1px solid var(--border-light);
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-fast);
+}
+
+.schedule-form:hover {
+  box-shadow: var(--shadow);
+}
+
+.schedule-form select,
+.schedule-form input {
+  padding: 10px;
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius-sm);
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  font-weight: 400;
+  transition: all var(--transition-fast);
+}
+
+.schedule-form select:focus,
+.schedule-form input:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 2px rgba(44, 90, 160, 0.1);
+}
+
+.schedule-form button {
+  padding: 10px;
+  background: var(--gradient-danger);
+  color: white;
+  border: none;
+  border-radius: var(--border-radius-sm);
+  cursor: pointer;
+  transition: all var(--transition-normal);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-sm);
+}
+
+.schedule-form button:hover {
+  transform: scale(1.02);
+  box-shadow: var(--shadow);
+}
+
+/* Actions du formulaire professionnelles */
+.form-actions {
+  display: flex;
+  gap: var(--spacing-md);
+  justify-content: center;
+  margin-top: var(--spacing-xl);
+  padding-top: var(--spacing-xl);
+  border-top: 1px solid var(--border-light);
+}
+
+.form-actions button {
+  padding: 12px 24px;
+  border: none;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  font-size: var(--font-size-base);
+  font-weight: 500;
+  transition: all var(--transition-normal);
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  box-shadow: var(--shadow);
+  min-width: 120px;
+  justify-content: center;
+}
+
+.form-actions button[type="submit"] {
+  background: var(--gradient-success);
+  color: white;
+}
+
+.form-actions button[type="submit"]:hover {
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
+}
+
+.form-actions button[type="button"] {
+  background: var(--bg-tertiary);
+  color: var(--text-secondary);
+  border: 1px solid var(--border-color);
+}
+
+.form-actions button[type="button"]:hover {
+  background: var(--bg-secondary);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow);
+}
+
+/* États améliorés */
+.loading {
+  text-align: center;
+  padding: var(--spacing-xl);
+  font-size: var(--font-size-base);
+  color: var(--primary);
+  background: var(--bg-secondary);
+  border-radius: var(--border-radius);
+  border: 1px solid var(--border-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-md);
+  font-weight: 500;
+  box-shadow: var(--shadow-sm);
+}
+
+.error {
+  text-align: center;
+  padding: var(--spacing-lg);
+  font-size: var(--font-size-base);
+  color: var(--danger);
+  background: #f8d7da;
+  border: 1px solid #f1aeb5;
+  border-radius: var(--border-radius);
+  margin-bottom: var(--spacing-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-md);
+  font-weight: 500;
+  box-shadow: var(--shadow-sm);
+}
+
+[data-theme="dark"] .error {
+  background: #2c0b0e;
+  border-color: #842029;
+}
+
+.error-message {
+  background: #f8d7da;
+  color: #721c24;
+  padding: var(--spacing-md);
+  border-radius: var(--border-radius);
+  margin-bottom: var(--spacing-lg);
+  border: 1px solid #f1aeb5;
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  font-weight: 500;
+  box-shadow: var(--shadow-sm);
+}
+
+[data-theme="dark"] .error-message {
+  background: #2c0b0e;
+  color: #f1aeb5;
+  border-color: #842029;
+}
+
+/* Responsive design professionnel */
+@media (max-width: 1200px) {
+  .courses-grid {
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .App {
+    padding: var(--spacing-sm);
+  }
+  
+  .App-header {
+    padding: var(--spacing-lg);
+  }
+  
+  .App-header h1 {
+    font-size: var(--font-size-xl);
+    flex-direction: column;
+    gap: var(--spacing-xs);
+  }
+  
+  .theme-toggle {
+    position: relative;
+    top: auto;
+    right: auto;
+    margin: var(--spacing-md) auto 0;
+  }
+  
+  .courses-grid {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-md);
+  }
+  
+  .schedule-form {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-sm);
+  }
+  
+  .filters form {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-sm);
+  }
+  
+  .header-actions {
+    flex-direction: column;
+    align-items: stretch;
+    gap: var(--spacing-sm);
+  }
+  
+  .form-actions {
+    flex-direction: column;
+    gap: var(--spacing-sm);
+  }
+  
+  .course-actions {
+    flex-direction: column;
+  }
+  
+  .course-form {
+    padding: var(--spacing-lg);
+  }
+  
+  .filters, .schedules-section {
+    padding: var(--spacing-md);
+  }
+}
+
+@media (max-width: 480px) {
+  :root {
+    --spacing-md: 1rem;
+    --spacing-lg: 1.5rem;
+    --spacing-xl: 2rem;
+  }
+  
+  .course-item, .course-form, .filters {
+    padding: var(--spacing-md);
+  }
+}
+
+/* Badges et indicateurs professionnels */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: var(--font-size-xs);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.badge-primary {
+  background: var(--primary-light);
+  color: var(--primary);
+}
+
+.badge-success {
+  background: rgba(25, 135, 84, 0.1);
+  color: var(--success);
+}
+
+.badge-warning {
+  background: rgba(255, 193, 7, 0.1);
+  color: #856404;
+}
+
+/* Styles pour le système de toasts professionnel */
+.toast-success {
+  background: linear-gradient(135deg, #198754 0%, #146c43 100%);
+  border-color: #198754;
+  color: white;
+}
+
+.toast-error {
+  background: linear-gradient(135deg, #dc3545 0%, #bb2d3b 100%);
+  border-color: #dc3545;
+  color: white;
+}
+
+.toast-warning {
+  background: linear-gradient(135deg, #ffc107 0%, #e0a800 100%);
+  border-color: #ffc107;
+  color: #212529;
+}
+
+.toast-info {
+  background: linear-gradient(135deg, #2c5aa0 0%, #1e4a8a 100%);
+  border-color: #2c5aa0;
+  color: white;
+}
+
+/* Styles pour le formulaire amélioré */
+.form-info {
+  background: var(--primary-light);
+  color: var(--primary);
+  padding: var(--spacing-sm);
+  border-radius: var(--border-radius-sm);
+  margin-bottom: var(--spacing-lg);
+  border-left: 3px solid var(--primary);
+  font-size: var(--font-size-sm);
+}
+
+.form-info p {
+  margin: 0;
+  font-weight: 500;
+}
+
+.schedule-count {
+  font-size: var(--font-size-sm);
+  font-weight: 500;
+  color: var(--text-secondary);
+  margin-left: var(--spacing-sm);
+}
+
+/* États de chargement professionnels */
+.btn-loading {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-loading::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+  animation: loading-shimmer 1.5s infinite;
+}
+
+@keyframes loading-shimmer {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+.loading-spinner {
+  width: 16px;
+  height: 16px;
+  border: 2px solid transparent;
+  border-top: 2px solid currentColor;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Scrollbar personnalisée professionnelle */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-secondary);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primary);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary-hover);
+}
